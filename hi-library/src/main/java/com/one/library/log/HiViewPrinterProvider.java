@@ -31,8 +31,7 @@ public class HiViewPrinterProvider {
         if (rootView.findViewWithTag(TAG_FLOATING_VIEW) != null) {
             return;
         }
-        FrameLayout.LayoutParams params =
-            new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.BOTTOM | Gravity.END;
         View floatingView = genFloatingView();
         floatingView.setTag(TAG_FLOATING_VIEW);

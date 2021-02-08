@@ -83,7 +83,7 @@ object HiExecutor {
         }
 
         open fun onPrepare() {
-            //转菊花
+            //loading
         }
 
         abstract fun onBackground(): T?
