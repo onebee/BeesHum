@@ -22,7 +22,14 @@ class HiLogDemoActivity : AppCompatActivity() {
 
 
     private fun printLog() {
-        HiLog.i("this is a  cons log ")
+
+        var s = "{\"customer\":{\n" +
+                "\"name\":\"Mr A\",\n" +
+                "\"age\":\"33\",\n" +
+                "\"country\":\"USA\",\n" +
+                "\"tel\":[\"111111111\",\"9999999999\"]\n" +
+                "}}"
+        HiLog.i(s)
 
     }
 }
