@@ -48,8 +48,7 @@ public class HiViewPrinterProvider {
         if (rootView.findViewWithTag(TAG_LOG_VIEW) != null) {
             return;
         }
-        FrameLayout.LayoutParams params =
-            new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, HiDisplayUtil.dp2px(160, rootView.getResources()));
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, HiDisplayUtil.dp2px(160, rootView.getResources()));
         params.gravity = Gravity.BOTTOM;
         View logView = genLogView();
         logView.setTag(TAG_LOG_VIEW);
@@ -57,17 +56,12 @@ public class HiViewPrinterProvider {
         isOpen = true;
     }
 
-    /**
-     * 关闭LogView
-     */
     public void closeLogView() {
         isOpen = false;
         rootView.removeView(genLogView());
     }
 
-    /**
-     * 展示Log 悬浮按钮
-     */
+
     public void closeFloatingView() {
         rootView.removeView(genFloatingView());
     }
@@ -99,8 +93,7 @@ public class HiViewPrinterProvider {
         logView.setBackgroundColor(Color.BLACK);
         logView.addView(recyclerView);
 
-        FrameLayout.LayoutParams params =
-            new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.END;
         TextView closeView = new TextView(rootView.getContext());
         closeView.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +104,31 @@ public class HiViewPrinterProvider {
         });
         closeView.setText("Close");
         logView.addView(closeView, params);
+
+
+        FrameLayout.LayoutParams paramsClear = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsClear.gravity = Gravity.END | Gravity.BOTTOM;
+        TextView clearView = new TextView(rootView.getContext());
+        clearView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearLog();
+            }
+        });
+        clearView.setText("Clear");
+        logView.addView(clearView, paramsClear);
+
         return this.logView = logView;
+    }
+
+    /**
+     * TODO 清空log 待完善
+     */
+    public  void clearLog(){
+
+        RecyclerView.Adapter adapter = recyclerView.getAdapter();
+        int itemCount = adapter.getItemCount();
+        adapter.notifyItemRangeRemoved(0,itemCount);
+
     }
 }
