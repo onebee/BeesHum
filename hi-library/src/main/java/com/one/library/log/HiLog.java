@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @author diaokaibin@gmail.com on 2/8/21.
- *
+ * <p>
  * 打印堆栈信息
  * File 输出
  * 模拟控制台
@@ -91,6 +91,7 @@ public class HiLog {
             String stackTrace = HiLogConfig.HI_STACK_TRACE_FORMATTER.format(
                     HiStackTraceUtil.getCroppedRealStackTrack(new Throwable().getStackTrace(), HI_LOG_PACKAGE, config.stackTraceDepth()));
             sb.append(stackTrace).append("\n");
+
         }
         String body = parseBody(contents, config);
         if (body != null) {//替换转义字符\
