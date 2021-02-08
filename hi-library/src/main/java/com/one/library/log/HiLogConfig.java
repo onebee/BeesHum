@@ -9,7 +9,7 @@ public abstract class HiLogConfig {
     static HiThreadFormatter HI_THREAD_FORMATTER = new HiThreadFormatter();
     static HiStackTraceFormatter HI_STACK_TRACE_FORMATTER = new HiStackTraceFormatter();
 
-    public JsonParser injectJsonParse() {
+    public JsonParser injectJsonParser() {
         return null;
     }
 
