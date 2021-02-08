@@ -1,0 +1,4 @@
+include ':hi-ui'
+include ':hi-library'
+include ':app'
+rootProject.name = "BeesHum"
