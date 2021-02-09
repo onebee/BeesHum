@@ -1,4 +1,4 @@
-package com.one.common.ui;
+package com.one.common.ui.component;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

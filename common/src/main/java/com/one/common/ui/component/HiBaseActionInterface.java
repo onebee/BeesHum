@@ -1,4 +1,4 @@
-package com.one.common.ui;
+package com.one.common.ui.component;
 
 /**
  * @author diaokaibin@gmail.com on 2/9/21.
