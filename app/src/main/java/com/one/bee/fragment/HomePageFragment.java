@@ -1,6 +1,10 @@
 package com.one.bee.fragment;
 
+import android.content.Intent;
+import android.view.View;
+
 import com.one.bee.R;
+import com.one.bee.demo.HiRefreshDemoActivity;
 import com.one.common.ui.component.HiBaseFragment;
 
 /**
@@ -10,6 +14,20 @@ public class HomePageFragment extends HiBaseFragment {
 
     @Override
     public int getLayoutId() {
+
         return R.layout.fragment_home;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        getActivity().findViewById(R.id.tv_home).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), HiRefreshDemoActivity.class));
+
+            }
+        });
     }
 }
