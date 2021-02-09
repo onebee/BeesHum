@@ -1,6 +1,7 @@
 package com.one.bee;
 
 import com.one.common.ui.component.HiBaseApplication;
+import com.one.library.log.HiConsolePrinter;
 import com.one.library.log.HiLogConfig;
 import com.one.library.log.HiLogManager;
 
@@ -20,11 +21,6 @@ public class HiApplication extends HiBaseApplication {
             }
 
             @Override
-            public String getGlobalTag() {
-                return super.getGlobalTag();
-            }
-
-            @Override
             public boolean enable() {
                 return true;
             }
@@ -39,6 +35,6 @@ public class HiApplication extends HiBaseApplication {
                 return 5;
             }
 
-        });
+        },new HiConsolePrinter());
     }
 }

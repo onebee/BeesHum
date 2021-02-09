@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.one.bee.R;
-import com.one.bee.demo.HiRefreshDemoActivity;
+import com.one.bee.demo.refresh.HiRefreshDemoActivity;
 import com.one.common.ui.component.HiBaseFragment;
 
 /**

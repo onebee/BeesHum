@@ -1,4 +1,4 @@
-package com.one.bee.demo
+package com.one.bee.demo.refresh
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,7 +16,7 @@ class HiRefreshDemoActivity : HiBaseActivity() {
         setContentView(R.layout.activity_hi_refresh_demo)
 
         val refreshLayout = findViewById<HiRefreshLayout>(R.id.refresh_layout)
-        var overView = HiTextOverView(this)
+        var overView = HiLottieOverView(this)
 
         refreshLayout.setRefreshOverView(overView)
         refreshLayout.setRefreshListener(object : HiRefresh.HiRefreshListener {
