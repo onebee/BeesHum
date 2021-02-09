@@ -3,6 +3,7 @@ package com.one.bee.logic;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.IdRes;
@@ -32,8 +33,6 @@ import java.util.List;
  */
 public class MainActivityLogic {
 
-
-
     private HiFragmentTabView fragmentTabView;
     private HiTabBottomLayout hiTabBottomLayout;
     private List<HiTabBottomInfo<?>> infoList;
@@ -41,8 +40,11 @@ public class MainActivityLogic {
     private final static String SAVED_CURRENT_ID = "SAVED_CURRENT_ID";
     private int currentItemIndex;
 
-    public MainActivityLogic(ActivityProvider activityProvider) {
+    public MainActivityLogic(ActivityProvider activityProvider, Bundle savedInstanceState) {
         this.activityProvider = activityProvider;
+        if (savedInstanceState != null) {
+            currentItemIndex = savedInstanceState.getInt(SAVED_CURRENT_ID);
+        }
         initTabBottom();
     }
 
@@ -114,9 +116,11 @@ public class MainActivityLogic {
             @Override
             public void onTabSelectedChange(int index, @Nullable HiTabBottomInfo<?> prevInfo, @NonNull HiTabBottomInfo<?> nextInfo) {
                 fragmentTabView.setCurrentItem(index);
+                MainActivityLogic.this.currentItemIndex = index;
             }
         });
-        hiTabBottomLayout.defaultSelected(homeInfo);
+        hiTabBottomLayout.defaultSelected(infoList.get(currentItemIndex));
+
     }
 
     private void initFragmentTabView() {
@@ -136,6 +140,10 @@ public class MainActivityLogic {
 
     public List<HiTabBottomInfo<?>> getInfoList() {
         return infoList;
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(SAVED_CURRENT_ID, currentItemIndex);
     }
 
 
