@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.one.bee.R
-import com.one.ui.tab.common.IHiTabLayout
 import com.one.ui.tab.top.HiTabTopInfo
 import com.one.ui.tab.top.HiTabTopLayout
 import java.util.*
