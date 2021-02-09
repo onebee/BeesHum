@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.one.bee.R;
-import com.one.bee.demo.refresh.HiRefreshDemoActivity;
+import com.one.bee.demo.banner.HiBannerDemoActivity;
 import com.one.common.ui.component.HiBaseFragment;
 
 /**
@@ -25,7 +25,7 @@ public class HomePageFragment extends HiBaseFragment {
         getActivity().findViewById(R.id.tv_home).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), HiRefreshDemoActivity.class));
+                startActivity(new Intent(getActivity(), HiBannerDemoActivity.class));
 
             }
         });
