@@ -14,6 +14,7 @@ import com.one.ui.banner.core.HiBannerMo
 import com.one.ui.banner.indicator.HiCircleIndicator
 import com.one.ui.banner.indicator.HiIndicator
 import com.one.ui.banner.indicator.HiNumIndicator
+import kotlinx.android.synthetic.main.activity_hi_banner_demo.*
 import java.util.ArrayList
 
 class HiBannerDemoActivity : AppCompatActivity() {
@@ -35,6 +36,7 @@ class HiBannerDemoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hi_banner_demo)
+        banner
         initView(HiCircleIndicator(this), false)
         findViewById<Switch>(R.id.auto_play).setOnCheckedChangeListener { _, isChecked ->
             autoPlay = isChecked
@@ -49,6 +51,7 @@ class HiBannerDemoActivity : AppCompatActivity() {
             }
 
         }
+        
     }
 
     private fun initView(hiIndicator: HiIndicator<*>?, autoPlay: Boolean) {
