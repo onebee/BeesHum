@@ -53,6 +53,7 @@ object HiExecutor {
                 if (isPaused) {
                     lock.lock()
                     try {
+                        // 阻塞当前线程
                         pauseCondition.await()
                     } finally {
                         lock.unlock()
@@ -103,6 +104,7 @@ object HiExecutor {
     }
 
 
+    @Synchronized
     fun pause() {
         lock.lock()
         try {
@@ -113,6 +115,7 @@ object HiExecutor {
         }
     }
 
+    @Synchronized
     fun resume() {
         lock.lock()
         try {

@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.one.bee.R;
+import com.one.bee.concurrent.ConcurrentTest;
 import com.one.bee.demo.banner.HiBannerDemoActivity;
 import com.one.common.ui.component.HiBaseFragment;
 import com.one.library.log.HiConsolePrinter;
-import com.one.library.log.HiLog;
 import com.one.library.log.HiLogManager;
 
 /**
@@ -43,13 +43,15 @@ public class HomePageFragment extends HiBaseFragment {
     public void onResume() {
         super.onResume();
 
-        HiLog.i(" onResume : " + tv.getWidth() + " , " + tv.getHeight());
+//        HiLog.i(" onResume : " + tv.getWidth() + " , " + tv.getHeight());
+//
+//        tv.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                HiLog.i(" post onResume : " + tv.getWidth() + " , " + tv.getHeight());
+//            }
+//        });
 
-        tv.post(new Runnable() {
-            @Override
-            public void run() {
-                HiLog.i(" post onResume : " + tv.getWidth() + " , " + tv.getHeight());
-            }
-        });
+        new ConcurrentTest().test();
     }
 }
