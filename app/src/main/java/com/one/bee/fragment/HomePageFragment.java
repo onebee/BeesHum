@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.one.bee.R;
-import com.one.bee.concurrent.ConcurrentTest;
+import com.one.bee.coroutine.CountDowLatchDemo;
 import com.one.bee.demo.banner.HiBannerDemoActivity;
 import com.one.common.ui.component.HiBaseFragment;
 import com.one.library.log.HiConsolePrinter;
@@ -52,6 +52,9 @@ public class HomePageFragment extends HiBaseFragment {
 //            }
 //        });
 
-        new ConcurrentTest().test();
+//        new ConcurrentTest().test();
+
+//        CoroutineScene.INSTANCE.startScene2();
+        new CountDowLatchDemo().count();
     }
 }
